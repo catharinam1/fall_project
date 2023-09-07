@@ -1,0 +1,142 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    /* animation: gradient 15s ease infinite; */
+    /* background: radial-gradient(circle at 3% 25%, rgb(29, 68, 90) 0%, rgba(4, 12, 24, 1) 100%); */
+    background: white;
+	background-size: 400% 400%;
+    height: 100vh;
+	font-family: sans-serif;
+}
+
+ @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.wave {
+	position: fixed;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 7rem;
+	padding: 0 2 rem;
+}
+
+.img {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+}
+
+.login-container {
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+}
+
+.img reading {
+	width: 500px;
+}
+
+.reading {
+	margin-top: 295px;
+	margin-left: 5px;
+}
+
+.profile_pic {
+	width: 200px;
+}
+
+form {
+	width: 360px;
+	/* background: rgba(24, 150,185,1); */
+	padding: 2rem;
+	border-radius: 5px;
+}
+
+form h2 {
+	font-size: 2.9rem;
+	text-transform: uppercase;
+	margin: 15px 0;
+	color: white;
+}
+
+.input-div {
+	display: grid;
+	grid-template-columns: 7% 93%;
+	margin: 25px 0;
+	padding: 5px 0;
+	border-bottom: 2px solid rgba(24, 150,185,1);
+}
+
+.input-div .one{
+	margin-top: 0;
+}
+
+.input-div .two{
+	margin-bottom: 4px;	
+}
+
+.i {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+}
+
+.i i {
+	color: rgba(24, 150,185,1);
+}
+
+.input-div > div {
+	position: relative;
+	height: 45px;
+}
+
+.input-div > div h5 {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: rgba(24, 150,185,1);
+	font-size: 18px;
+	display: none;
+	transition: .2s;
+}
+
+.input {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: -10px;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	font-family: sans-serif;
+	color: rgba(24, 150,185,1);
+}
