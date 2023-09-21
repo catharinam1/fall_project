@@ -1,8 +1,23 @@
 .edubahamas__navbar {
-    /* display: flex; */
     justify-content: space-between;
-    align-items: center;
-    padding: 2rem 6rem;
+    justify-content: center;
+	align-items: center;
+	display: flex;
+    padding: 2rem 5rem;
+    width: 100%;
+    /* width: 1920px; */
+    /* margin: 0; */
+}
+
+@media screen and (max-width: 1500px) {
+    .edubahamas__navbar {
+        justify-content: center;
+	    align-items: center;
+	    display: flex;
+        justify-content: space-between;
+        padding: 2rem 5rem;
+        width: 100%;
+    } 
 }
 
 .edubahamas__navbar-links {
@@ -10,10 +25,57 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
-.edubahamas__navbar-links-logo {
-    margin-right: 2rem;
+.edubahamas__navbar-links a {
+background-image: linear-gradient(
+      to right,
+      #54b3d6,
+      #54b3d6 50%,
+      #fff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  a:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  a:hover {
+    background-position: 0;
+   }
+   
+   a:hover::before {
+     width:100%;
+   }
+
+/* .edubahamas__navbar-links-logo { */
+    /* margin-right: 2rem; */
+/* } */
+
+.logo {
+    /* color: transparent;
+    background: linear-gradient(90deg, rgba(29,221,199,1) 0%, rgba(24,179,185,1) 35%, rgba(24, 150,185,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text; */
+    color: white;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .edubahamas__navbar-links-logo img {
@@ -23,8 +85,12 @@
 
 .edubahamas__navbar-links-container{
     display: flex;
-    flex-direction: row;
-    margin-left: -30px;
+    justify-content: center;
+	align-items: center;
+	display: flex;
+    /* justify-content: flex-end; */
+    /* align-items: flex-end; */
+    margin: 0 0 0 330px;
 }
 
 .edubahamas__navbar-links-container a:hover {
@@ -37,14 +103,15 @@
     color: #fff;
     padding: 0rem 2rem;
     font-family: 'Manrope', sans-serif;
+    cursor: pointer;
 }
 
 .edubahamas__navbar-sign {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: -40px;
-    margin-bottom: -40px;
+    margin-top: -63px; 
+    margin-bottom: -50px;
 }
 
 .edubahamas__navbar-sign p {
@@ -63,32 +130,24 @@
     cursor: pointer;
     text-transform: capitzalize;
 }
-.edubahamas__navbar-sign .button_style {
-    background: #8FBC8F;
-    width: 100%;
-}
-
-.edubahamas__navbar-sign .button_style:hover {
-    background: #749974;
-    transition: all .8s ease;
-    -webkit-transition: all .8s ease;
-}
 
 .edubahamas__navbar-sign .button_style2 {
-    background: rgba(24, 150,185,1);
-    width: 100%;
-    margin-left: 20px;
+    /* background: rgba(24, 150,185,1); */
+    /* width: 100%; */
+    /* margin-left: 20px; */
 }
 
 .edubahamas__navbar-sign .button_style2:hover {
     background: #5F9EA0;
     transition: all .8s ease;
+    cursor: pointer;
     -webkit-transition: all .8s ease;
 }
 
 .edubahamas__navbar-sign button,
 .edubahamas__navbar-menu-container button {
     padding: 0.5rem 1rem;
+    margin-right: 1rem;
     color: #fff;
     font-family: 'Manrope', sans-serif;
     font-size: 14px;
@@ -100,7 +159,7 @@
 }
 
 .edubahamas__navbar-menu {
-    margin-left: 1 rem;
+    /* margin-left: 1rem; */
     display: none;
     position: relative;
 }
@@ -134,17 +193,25 @@
     display: none;
 }
 
-@media screen and (max-width: 1050px) {
-    .edubahamas__navbar-links-container {
+@media screen and (max-width: 1500px) {
+    /* .edubahamas__navbar-links-container {
         display: none;
     }
     .edubahamas__navbar-menu {
         display: flex;
-    }
+    } */
     .edubahamas__navbar-sign {
-        margin-top: 5px;
+        /* margin-top: 5px; */
+        margin-right: 20px;
+    }
+    .logo {
+        font-size: 25px;
+    }
+    .edubahamas__navbar-links-container{
+        margin: 0 0 0 150px;
     }
 }
+
 
 @media screen and (max-width: 700px) {
     .edubahamas__navbar {
@@ -152,6 +219,12 @@
     }
     .edubahamas__navbar-sign {
         margin-top: 5px;
+    }
+    .edubahamas__navbar-links-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 0 0 0 100px;
     }
 }
 

@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
-import { Link } from 'react-router-dom';
+import { Link as Linker } from 'react-router-dom';
+import { Link, Element } from 'react-scroll';
 import logo from '../../assets/Untitled.png'
 
 const Menu = () => (
   <>
-  <p><a href="#home">Home</a></p>
-  <p><a href="#about">About EduBahamas</a></p>
-  <p><a href="#possibility">Subjects</a></p>
-  <p><a href="#features">Quizzes</a></p>
-  <p><a href="#blog">Past Papers</a></p>
+  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/#">
+    <p><a href="">Home</a></p>
+  </Linker>
+
+  <p><Link to="about" smooth={true} duration={500}>About EduBahamas</Link></p>
+  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/subjects">
+    <p><a href="">Subjects</a></p>
+  </Linker>
+  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/quizzes">
+    <p><a href="#features">Quizzes</a></p>
+  </Linker>
+  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/pastpapers">
+    <p><a href="#blog">Past Papers</a></p>
+  </Linker>
   </>
 )
 
@@ -22,20 +32,20 @@ const Navbar = () => {
     <div className="edubahamas__navbar">
       <div className="edubahamas__navbar-links">
 
-        {/* <div className="edubahamas__navbar-links-logo">
-          <img src={logo} />
-        </div> */}
+        <div className="edubahamas__navbar-links-logo">
+          <h1 className="logo">EduBahamas</h1>
+        </div>
         <div className="edubahamas__navbar-links-container">
           <Menu />
         </div>
       </div>
       <div className="edubahamas__navbar-sign">
-        <Link to="/signIn">
-          <button type="button" className="button_style">Sign In</button>
-        </Link>
-        <Link to="/register">
-          <button type="button" className="button_style2">Register</button>
-        </Link>
+        <Linker to="/signIn">
+          <button type="button" className="bg-transparent hover:cursor-pointer hover:text-[#5F9EA0] hover:bg-transparent w-full w-full">Sign In</button>
+        </Linker>
+        <Linker to="/register">
+          <button className="bg-blue-600 w-full" type="button">Register</button>
+        </Linker>
       </div>
       <div className="edubahamas__navbar-menu">
         {toggleMenu
