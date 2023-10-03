@@ -33,15 +33,15 @@ const Analytics = () => {
   
   return (
     <div
-      className={`filter-blur ${isIntersecting ? 'filter-unblur' : ''}`}
+      // className={`filter-blur ${isIntersecting ? 'filter-unblur' : ''}`}
       ref={ref}>    
-    <div id="about" className="w-full bg-white py-20 2xl:py-40 px-4 mt-0">
+    <div id="about" className="w-full md:h-[700px] 2xl:h-[900px] bg-white py-20 2xl:py-40 px-4 flex items-center">
         <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
-            <img className="w-[500px]" src={reading} />
+            <img className="2xl:w-[700px] 2xl:ml-[-100px] w-[500px]" src={reading} />
             <div className="flex flex-col justify-center">
                 <p className="text-transparent bg-gradient-to-r from-teal-400 via-blue-400 to-blue-600 bg-clip-text font-bold">ABOUT EDUBAHAMAS</p>
-                <h1 className="md:text-3xl sm:text-2xl font-bold py-2">A Bahamian Online Learning Platform</h1>
-                <p className="text-[grey]">
+                <h1 className="md:text-3xl sm:text-2xl font-bold py-2 2xl:mb-[40px]">A Bahamian Online Learning Platform</h1>
+                <p className="text-[grey] 2xl:w-[650px]">
                 EduBahamas is your comprehensive destination for preparing for 
                 the BGCSE and BJC exams in the Bahamas. As we continue to 
                 refine and expand our platform in the beta stage, our commitment 
@@ -57,7 +57,7 @@ const Analytics = () => {
                 their guidance. <br/><br />Join us on EduBahamas as we empower 
                 learners and educators alike on the path to academic success.
                 </p>
-                <button className="bg-[#54b3d6] w-[200px] rounded-md font-medium my-5 mx-auto md:mx-[0]">Start Learning</button>
+                <button className="bg-[#54b3d6] w-[200px] rounded-md font-medium my-5 2xl:mt-[60px] mx-auto md:mx-[0]">Start Learning</button>
             </div>
         </div>
     </div>
