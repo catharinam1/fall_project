@@ -1,14 +1,9 @@
 # EDU-Bahamas
 
-## Table of Contents
+<!-- ## Table of Contents -->
 
-1. [Description](#description)
-2. [Features](#features)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Documentation](#documentation)
-6. [Contributing](#contributing)
-7. [License](#license)
+<!-- 1. [Description](#description)
+5. [Contributing](#contributing) -->
 
 ## Description
 
@@ -19,10 +14,7 @@ With our platform, students can conveniently monitor their progress on a per-sub
 well-prepared for their exams.Meanwhile, teachers have the power to create virtual classrooms, enabling them to access invaluable data 
 analytics and track the progress of every student under their guidance. Join us on EduBahamas as we empower learners and educators alike on the path to academic success.
 
-## Features
+## Contributing
 
-Highlight the key features of your project. This could be a bulleted list or a description of what makes your project unique.
-
-## Installation
-
-Provide step-by-step instructions on how to install and set up your project. Include any dependencies and prerequisites, if necessary.
+Cathanrina Moncur
+Keonte Nightingale
