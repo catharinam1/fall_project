@@ -16,5 +16,5 @@ analytics and track the progress of every student under their guidance. Join us 
 
 ## Contributing
 
-Cathanrina Moncur
+Catharina Moncur
 Keonte Nightingale
