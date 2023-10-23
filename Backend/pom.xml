@@ -8,13 +8,13 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.EduBahamas</groupId>
+	<groupId>EduBahamas</groupId>
 	<artifactId>Backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Backend</name>
-	<description>Backend for the EduBahamas backend</description>
+	<name>EduBahamas</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
