@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,13 @@ public class student{
     @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
     private String password;
     private String email;
     private LocalDate dob;
@@ -31,7 +37,7 @@ public class student{
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
         this.email = email;
         this.dob = dob;
     }
@@ -51,12 +57,12 @@ public class student{
         this.id = id;
     }
 
-    public String getName(){
-        return firstName + " " + lastName;
+    public String getFirstName(){
+        return firstName;
     }
-    public void setName(String firstName, String lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
+
+    public String getLastName(){
+        return lastName;
     }
 
     public String getEmail(){
@@ -70,7 +76,7 @@ public class student{
         return password;
     }
     public void setPassword(String password){
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     public LocalDate getDob(){
@@ -83,8 +89,10 @@ public class student{
     public String toString(){
         return "Student{" +
                 "id=" + id +
-                ", name='" + getName() + '\'' +
+                ", firstname='" + firstName + '\'' +
+                ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                // ", password='" + password + '\'' +
                 ", dob=" + dob +
                 '}';
     }

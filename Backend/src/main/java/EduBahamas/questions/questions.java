@@ -17,8 +17,8 @@ public class questions {
     @Column(name = "questiontext")
     private String questiontext;
 
-    @Column(name = "examid")
-    private Long examid;
+    // @Column(name = "examid")
+    // private Long examid;
 
     @Column(name = "questiontype")
     private String questiontype;
@@ -30,7 +30,7 @@ public class questions {
 
     public questions(String questiontext, Long examid, String correctanswer, Long questionId, String questiontype){
         this.questiontext = questiontext;
-        this.examid = examid;
+        //this.examid = examid;
         this.correctanswer = correctanswer;
         this.questionid = questionId;
         this.questiontype = questiontype;
@@ -56,7 +56,7 @@ public class questions {
         return "Question{" +
                 "text=" + getQuestionText() +
                 ", answer='" + getCorrectAnswer() + '\'' +
-                ", typer='" + getQuestionType() + '\'' +
+                ", type='" + getQuestionType() + '\'' +
                 ", id='" + getQuestionId() +
                 '}';
     }
