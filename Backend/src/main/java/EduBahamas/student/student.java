@@ -9,6 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+//TODO: create password field
+//TODO: seperate first and last name
+//TODO: hashpassword and put it into the database
+//TODO: implement checking to see if account exists and password is correct
+
 @Entity
 @Table
 public class student{
@@ -16,22 +21,28 @@ public class student{
     @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
+    private String password;
     private String email;
     private LocalDate dob;
 
     public student(){
     }
 
-    public student(Long id, String name, String email, LocalDate dob){
+    public student(Long id, String firstName, String lastName, String password, String email, LocalDate dob){
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
         this.email = email;
         this.dob = dob;
     }
 
-    public student(String name, String email, LocalDate dob){
-        this.name = name;
+    public student(String firstName, String lastName, String password, String email, LocalDate dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
         this.email = email;
         this.dob = dob;
     }
@@ -44,10 +55,11 @@ public class student{
     }
 
     public String getName(){
-        return name;
+        return firstName + " " + lastName;
     }
-    public void setName(String name){
-        this.name = name;
+    public void setName(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getEmail(){
@@ -55,6 +67,13 @@ public class student{
     }
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public LocalDate getDob(){
@@ -67,7 +86,7 @@ public class student{
     public String toString(){
         return "Student{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + getName() + '\'' +
                 ", email='" + email + '\'' +
                 ", dob=" + dob +
                 '}';
