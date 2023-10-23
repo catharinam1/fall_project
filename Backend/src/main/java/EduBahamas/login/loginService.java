@@ -2,7 +2,7 @@ package EduBahamas.login;
 
 import java.util.Optional;
 
-import org.hibernate.mapping.List;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +23,9 @@ public class loginService {
         Optional<student> student = studentRepository.findStudentByEmail(studentLogin.getEmail());
         String attemptedPassword = studentLogin.getPassword();
         String password = student.get().getPassword();
+        Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
         
-        if(student.isPresent() && (attemptedPassword.equals(password))){
+        if(student.isPresent() && (passwordsMatch == true)){
             loginSuccess message = new loginSuccess(true, null, student);
             return message;
         } else{

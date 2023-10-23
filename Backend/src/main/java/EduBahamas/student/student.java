@@ -2,17 +2,14 @@ package EduBahamas.student;
 
 import java.time.LocalDate;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-
-//TODO: create password field
-//TODO: seperate first and last name
-//TODO: hashpassword and put it into the database
-//TODO: implement checking to see if account exists and password is correct
 
 @Entity
 @Table
@@ -42,7 +39,7 @@ public class student{
     public student(String firstName, String lastName, String password, String email, LocalDate dob){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
         this.email = email;
         this.dob = dob;
     }
