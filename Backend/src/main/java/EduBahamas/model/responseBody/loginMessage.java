@@ -1,8 +1,7 @@
-package EduBahamas.login;
+package EduBahamas.model.responseBody;
 
 import java.util.Optional;
-
-import EduBahamas.student.student;
+import EduBahamas.model.student;;
 
 public class loginMessage {
     private boolean success;

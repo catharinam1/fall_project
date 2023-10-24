@@ -1,4 +1,10 @@
-package EduBahamas.student;
+package EduBahamas.model.requestBody;
+
+import EduBahamas.model.student;
+
+/*
+ * POJO to represent the body of a student login request
+*/
 
 public class studentLogin extends student{
     String email;

@@ -1,4 +1,4 @@
-package EduBahamas.student;
+package EduBahamas.model;
 
 import java.time.LocalDate;
 

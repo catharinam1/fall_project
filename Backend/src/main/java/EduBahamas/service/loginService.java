@@ -1,4 +1,4 @@
-package EduBahamas.login;
+package EduBahamas.service;
 
 import java.util.Optional;
 
@@ -6,9 +6,10 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import EduBahamas.student.student;
-import EduBahamas.student.studentLogin;
-import EduBahamas.student.studentRepository;
+import EduBahamas.model.student;
+import EduBahamas.model.requestBody.studentLogin;
+import EduBahamas.model.responseBody.loginMessage;
+import EduBahamas.repository.studentRepository;
 
 @Service
 public class loginService {

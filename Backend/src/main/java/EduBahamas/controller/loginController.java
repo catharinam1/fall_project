@@ -1,4 +1,4 @@
-package EduBahamas.login;
+package EduBahamas.controller;
 
 import java.util.List;
 
@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import EduBahamas.student.student;
-import EduBahamas.student.studentLogin;
+import EduBahamas.model.student;
+import EduBahamas.model.requestBody.studentLogin;
+import EduBahamas.service.loginService;
 
 @RestController
 @RequestMapping(path="api/v1/login")
