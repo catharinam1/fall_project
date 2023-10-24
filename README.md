@@ -23,3 +23,4 @@ analytics and track the progress of every student under their guidance. Join us 
 
 - Catharina Moncur
 - Keonte Nightingale
+- Cassandra Hetrick
