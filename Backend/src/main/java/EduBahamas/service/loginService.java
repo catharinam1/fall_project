@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import EduBahamas.model.student;
 import EduBahamas.model.requestBody.studentLogin;
-import EduBahamas.model.responseBody.loginMessage;
+import EduBahamas.model.responseBody.userResponse;
 import EduBahamas.repository.studentRepository;
 
 @Service
@@ -27,10 +27,10 @@ public class loginService {
         Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
         
         if(student.isPresent() && (passwordsMatch == true)){
-            loginMessage message = new loginMessage(true, null, student);
+            userResponse message = new userResponse(true, null, student);
             return message;
         } else{
-            loginMessage message = new loginMessage(true, "incorrect email or password");
+            userResponse message = new userResponse(true, "incorrect email or password");
             return message;
         }
     }

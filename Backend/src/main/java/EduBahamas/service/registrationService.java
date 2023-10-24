@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import EduBahamas.model.requestBody.registerRequest;
-import EduBahamas.model.responseBody.loginMessage;
+import EduBahamas.model.responseBody.userResponse;
 import EduBahamas.model.student;
 
 @Service
@@ -24,7 +24,7 @@ public class registrationService {
             return registerStudent(registerRequest);
         }
         else{
-            return new loginMessage(false, "we do not have this functionality yet");
+            return new userResponse(false, "we do not have this functionality yet", null);
         }
     }
 
@@ -37,9 +37,9 @@ public class registrationService {
                             registerRequest.getScchool());
 
             studentService.addNewStudent(student);
-            return new loginMessage(true, "", student);
+            return new userResponse(true, "", student);
         }
-        return new loginMessage(false, "This email is already taken");
+        return new userResponse(false, "This email is already taken", null);
     }
 
     public void registerTeacher(registerRequest registerRequest){

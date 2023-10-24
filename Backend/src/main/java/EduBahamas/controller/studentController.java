@@ -29,6 +29,16 @@ public class studentController {
     public List<student> getStudents(){
         return studentService.getStudents();
     }
+    /*
+        * {
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": "",
+        "school": "",
+        "role": ""
+        }
+     */
 
     @PostMapping
     public void registerNewStudent(@RequestBody student student){
