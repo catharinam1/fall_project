@@ -26,10 +26,10 @@ public class loginService {
         Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
         
         if(student.isPresent() && (passwordsMatch == true)){
-            loginSuccess message = new loginSuccess(true, null, student);
+            loginMessage message = new loginMessage(true, null, student);
             return message;
         } else{
-            loginFail message = new loginFail(false, "incorrect email or password");
+            loginMessage message = new loginMessage(false, "incorrect email or password", null);
             return message;
         }
     }

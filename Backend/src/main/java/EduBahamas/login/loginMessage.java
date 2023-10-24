@@ -1,12 +1,18 @@
 package EduBahamas.login;
 
-public class loginFail {
+import java.util.Optional;
+
+import EduBahamas.student.student;
+
+public class loginMessage {
     private boolean success;
     private String message;
-    
-    public loginFail(boolean success, String message){
+    private Optional<student> student;
+
+    public loginMessage(boolean success, String message, Optional<student> student){
         this.success = success;
         this.message = message;
+        this.student = student;
     }
 
     public boolean getSuccess(){
@@ -23,10 +29,20 @@ public class loginFail {
         this.message = message;
     }
 
+    public Optional<student> getStudent(){
+        return student;
+    }
+    public void setStudent(Optional<student> student){
+        this.student = student;
+    }
+
     public String toString(){
         return "{" +
                 "success=" + getSuccess() +
-                ", message='" + getMessage() +
+                ", message='" + getMessage() + '\'' +
+                "student=" + getStudent() +
                 '}';
     }
+
+
 }
