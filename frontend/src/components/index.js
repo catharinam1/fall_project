@@ -1,11 +1,5 @@
 export { default as Navbar } from './navbar/Navbar';
 export { default as Homepage } from './homepage/Homepage';
-<<<<<<< HEAD
-export { default as Analytics } from './analytics/Analytics';
-export { default as Subj } from './subj/Subj';
-export { default as Newsletter } from './newsletter/Newsletter';
-export { default as CarouselDefault } from './carousel/CarouselDefault';
-=======
 export { default as Analytics } from './about/About';
 export { default as HomeSubj } from './home_subject/HomeSubj';
 export { default as SectionThree } from './section-three/sectionThree';
@@ -16,6 +10,5 @@ export { default as Outline } from './biology-content/Outline';
 export { default as Modules } from './biology-content/Modules';
 export { default as Overview } from './biology-content/Overview';
 export { default as Test } from './test/Test';
->>>>>>> 2082d47 (Updated FrontEnd)
 
 

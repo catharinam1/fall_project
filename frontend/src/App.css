@@ -1,90 +1,17 @@
-<<<<<<< HEAD
-/* * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-} */
-
- /* a {
-     color: unset;
-     text-decoration: none;
- } */
-
- /* .gradient__bg {
-    animation: gradient 8s ease infinite;
-    background: radial-gradient(circle at 3% 25%, rgb(29, 68, 90) 0%, rgba(4, 12, 24, 1) 100%);
-    background-size: 400% 400%;
-    height: 100vh;
-} */
-
- @keyframes gradient {
-=======
 @keyframes gradient {
->>>>>>> 2082d47 (Updated FrontEnd)
 	0% {
 		background-position: 0% 50%;
 	}
 	50% {
-<<<<<<< HEAD
-		background-position: 100% 50%;
-=======
 		background-position: 200% 50%;
->>>>>>> 2082d47 (Updated FrontEnd)
 	}
 	100% {
 		background-position: 0% 50%;
 	}
 } 
 
-<<<<<<< HEAD
- /* .gradient__text {
-     background:var(--gradient-text);
-     background-clip: text;
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
- } */
-
- /* .section__padding {
-     padding: 4rem 6rem;
- }
-
- .section__margin {
-    margin: 4rem 6rem;
-}
-
-.scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-} */
-
-/* @media screen and (max-width: 700px) {
-    .section__padding {
-        padding: 4rem;
-    }
-    .section__margin {
-        margin: 4rem;
-    }
-} */
-
-/* @media screen and (max-width: 550px) {
-    .section__padding {
-        padding: 4rem 2rem;
-    }
-    .section__margin {
-        margin: 4rem 2rem;
-    }
-} */
-
 body {
     animation: gradient 15s ease infinite;
-    /* background: radial-gradient(circle at 3% 25%, rgb(29, 68, 90) 0%, rgba(4, 12, 24, 1) 100%); */
-	/* background-size: 100%; */
-    min-height: 100vh;
-=======
-body {
-    animation: gradient 15s ease infinite;
->>>>>>> 2082d47 (Updated FrontEnd)
 	justify-content: center;
 	align-items: center;
 	padding-right: 0;
@@ -93,13 +20,6 @@ body {
     background: radial-gradient(circle at 3% 25%, rgb(29, 68, 90) 0%, rgba(4, 12, 24, 1) 100%);
     background-size: 400% 400%;
     height: 100vh;
-<<<<<<< HEAD
-	/* display: flex; */
-	/* padding: 0; */
-	/* justify-content: center;
-	align-items: center;
-	font-family: sans-serif; */
-=======
 
 }
 
@@ -114,7 +34,6 @@ body {
     background-size: 400% 400%;
     height: 100vh;
 
->>>>>>> 2082d47 (Updated FrontEnd)
 }
 
  @keyframes gradient {
@@ -129,20 +48,6 @@ body {
 	}
 }
 
-<<<<<<< HEAD
-label {
-	color: #fff;
-	font-size: 2.3em;
-	justify-content: center;
-	display: flex;
-	margin: 60px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
-}
-
-=======
->>>>>>> 2082d47 (Updated FrontEnd)
 input {
 	width: 60%;
 	height: 20px;
@@ -156,28 +61,6 @@ input {
 	outline: none;
 }
 
-<<<<<<< HEAD
-button {
-	width: 60%;
-	height: 40px;
-	margin: 10px auto;
-	justify-content: center;
-	display: block;
-	color: #fff;
-	background: #5F9EA0;
-	font-size: 1rem;
-	border: none;
-	outline: none;
-	margin-top: 20px;
-	font-weight: bold;
-	border-radius: 5px;
-	transition: .2s ease-in;
-	cursor: pointer;
-}
-
-button:hover {
-	background: rgba(24, 150,185,1);
-=======
 #button-custom {
 	height: 40px;
 	justify-content: center;
@@ -194,7 +77,6 @@ button:hover {
 
 #button-custom:hover {
 	background: rgb(29, 68, 90) 0%;
->>>>>>> 2082d47 (Updated FrontEnd)
     transition: all .8s ease;
     -webkit-transition: all .8s ease;
 }
