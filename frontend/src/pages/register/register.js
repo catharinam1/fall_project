@@ -30,7 +30,7 @@ const Register = () => {
     };
 
     const handleRegistration = () => {
-        axios.post("/api/register", formData) // Replace with your backend endpoint URL
+        axios.post("localhost:8080/api/v1/register", formData) // Replace with your backend endpoint URL
           .then((response) => {
             // Handle the successful response (e.g., redirect to a login page)
             console.log("Registration successful", response.data);
