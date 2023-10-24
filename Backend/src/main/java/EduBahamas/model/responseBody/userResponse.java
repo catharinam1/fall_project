@@ -3,7 +3,6 @@ package EduBahamas.model.responseBody;
 /*
  * This class represents a POJO to handle responses back to the client
  * Has success or fail along with a message specifying why and potentially the information about a user
- * Testing the api_dev branch
  */
 
 
