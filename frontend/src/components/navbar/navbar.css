@@ -5,9 +5,6 @@
 	display: flex;
     padding: 2rem 5rem;
     width: 100%;
-    /* background-color: gray; */
-    /* width: 1920px; */
-    /* margin: 0; */
 }
 
 @media screen and (max-width: 1500px) {
@@ -64,15 +61,7 @@ background-image: linear-gradient(
      width:100%;
    }
 
-/* .edubahamas__navbar-links-logo { */
-    /* margin-right: 2rem; */
-/* } */
-
 .logo {
-    /* color: transparent;
-    background: linear-gradient(90deg, rgba(29,221,199,1) 0%, rgba(24,179,185,1) 35%, rgba(24, 150,185,1) 100%);
-    -webkit-background-clip: text;
-    background-clip: text; */
     color: white;
     margin-bottom: 5px;
     font-size: 30px;
@@ -86,12 +75,9 @@ background-image: linear-gradient(
 
 .edubahamas__navbar-links-container{
     display: flex;
-    justify-content: center;
 	align-items: center;
-	display: flex;
-    /* justify-content: flex-end; */
-    /* align-items: flex-end; */
-    margin: 0 0 0 330px;
+    width: 100%;
+    justify-content: center;
 }
 
 .edubahamas__navbar-links-container a:hover {
@@ -132,12 +118,6 @@ background-image: linear-gradient(
     text-transform: capitzalize;
 }
 
-.edubahamas__navbar-sign .button_style2 {
-    /* background: rgba(24, 150,185,1); */
-    /* width: 100%; */
-    /* margin-left: 20px; */
-}
-
 .edubahamas__navbar-sign .button_style2:hover {
     background: #5F9EA0;
     transition: all .8s ease;
@@ -160,7 +140,6 @@ background-image: linear-gradient(
 }
 
 .edubahamas__navbar-menu {
-    /* margin-left: 1rem; */
     display: none;
     position: relative;
 }
@@ -195,21 +174,11 @@ background-image: linear-gradient(
 }
 
 @media screen and (max-width: 1500px) {
-    /* .edubahamas__navbar-links-container {
-        display: none;
-    }
-    .edubahamas__navbar-menu {
-        display: flex;
-    } */
     .edubahamas__navbar-sign {
-        /* margin-top: 5px; */
         margin-right: 20px;
     }
     .logo {
         font-size: 25px;
-    }
-    .edubahamas__navbar-links-container{
-        margin: 0 0 0 150px;
     }
 }
 
