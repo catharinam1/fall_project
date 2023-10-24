@@ -60,7 +60,7 @@ const Header = () => {
           studying for national exams. Does this look like something that can be included
           at your institution?
         </p>
-        <button className="home_button" type="button">View All Subjects</button>
+        <button id="button-custom" className=" home_button" type="button">View All Subjects</button>
         {/* <div className="edubahamas__header-image">
           <Grid container spacing={0} columns={{ xs: 4, sm: 8, md: 12 }}>
             {sections.map((section, index) => (

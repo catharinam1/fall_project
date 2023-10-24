@@ -1,9 +1,6 @@
 import React from "react";
-import './register.css';
-import img from '../assets/black_student.jpeg'
-import back_arrow from '../assets/back_arrow.png'
-import login from '../assets/login.svg'
-import login1 from '../assets/login1.svg'
+import './register/register.css';
+
 import { Link as Linker } from 'react-router-dom';
 
 const signIn = () => {
@@ -11,16 +8,19 @@ const signIn = () => {
 
     return (
         <div className="struct">
+            <a href="http://localhost:3000">
+                <h2 className="absolute top-4 left-7 font-bold text-[white] text-[25px]">EduBahamas</h2>
+            </a>
         <div className="w-full h-full grid lg:grid-cols-2 md:grid-cols-1 bg-gray-100 flex justify-center items-center">
-                <h2 className="absolute top-4 left-7 font-bold text-[#1896b9] text-[25px]">EduBahamas</h2>
-            <div className=" w-[100%] h-[100%]">
-                {/* <img src={img} className="hidden sm:block rounded-md rounded-tr-none rounded-br-none h-[100%]"/> */}
-                
-                <img src={login} className="hidden sm:block mt-[200px] ml-[150px] md:w-[500px] 2xl:w-[700px]" />
-
+            
+            <div className=" flex flex-col justify-center items-center text-center w-[100%] h-[100%] bg-[#1896b9]">
+                <p className="hidden sm:block text-gray-100 font-poppins">Nice To See You Again</p>
+                <h1 className="hidden sm:block md:w-[500px] 2xl:w-[700px] text-gray-100 md:text-6xl 2xl:text-8xl font-poppins">Welcome Back</h1>
+                {/* <img src={login} className="hidden sm:block mt-[50px] md:w-[400px] 2xl:w-[500px]" /> */}
             </div>
-            <div className="ml-[10px] relative w-[600px] ">
-                <form className="bg-gray-100 rounded-md 2xl:ml-[100px] md:ml-[80px]">
+
+            <div className="flex flex-col items-center justify-center text-center w-[100%]">
+                <form className="bg-gray-100 rounded-md w-[60%]">
         
                     <h2 className="text-[#1896b9] py-5 mt-[10%] mb-[90px] display-flex justify-center text-center text-4xl font-bold">
                         Sign In
@@ -35,12 +35,12 @@ const signIn = () => {
                         {/* <label className="text-gray-600 py-0 my-0 w-[25%] text-[16px] ">Password</label> */}
                         <input className="border border-gray-200 border-t-0 border-l-0 border-r-0 outline-none focus:shadow-[gray] shadow-md  py-5 px-3 my-0 rounded-md w-[90%]" type="password" placeholder="Password" />
                     </div>
-                    <div>
+                    <div className="flex flex-col justify-center items-center w-[100%]">
 
-                    <button className="w-[90%] bg-[#1896b9] hover:bg-[#126e87] my-10 mt-[30px] mb-0 text-[14px]"> Sign In </button>
+                    <button id="button-custom" className="rounded-md w-[90%] bg-[#1896b9] hover:bg-[#126e87] my-10 mt-[30px] text-[14px] text-white"> Sign In </button>
                     
                     <Linker className="hover:bg-transparent hover:before:w-0">
-                        <h1 className="flex justify-center items-center mt-[20px] display-inline text-[12px] text-gray-500 hover:underline">Forgot Password?</h1>
+                        <h1 className=" display-inline text-[12px] text-gray-500 hover:underline">Forgot Password?</h1>
                      </Linker>
                     </div>
 

@@ -3,7 +3,6 @@ import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
 import { Link as Linker } from 'react-router-dom';
 import { Link, Element } from 'react-scroll';
-import logo from '../../assets/Untitled.png'
 
 const Menu = () => (
   <>
@@ -12,15 +11,20 @@ const Menu = () => (
   </Linker>
 
   <p><Link to="about" smooth={true} duration={500}>About EduBahamas</Link></p>
-  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/subjects">
+
+  <p><Link to="home_subj" smooth={true} duration={500}>Subjects</Link></p>
+
+  <p><Link to="resources" smooth={true} duration={500}>Resources</Link></p>
+
+  {/* <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/subjects">
     <p><a href="">Subjects</a></p>
-  </Linker>
-  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/quizzes">
+  </Linker> */}
+  {/* <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/quizzes">
     <p><a href="#features">Quizzes</a></p>
-  </Linker>
-  <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/pastpapers">
+  </Linker> */}
+  {/* <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/pastpapers">
     <p><a href="#blog">Past Papers</a></p>
-  </Linker>
+  </Linker> */}
   </>
 )
 
@@ -44,7 +48,7 @@ const Navbar = () => {
           <button type="button" className="bg-transparent hover:cursor-pointer hover:text-[#5F9EA0] hover:bg-transparent w-full w-full">Sign In</button>
         </Linker>
         <Linker to="/register">
-          <button className="bg-blue-600 w-full" type="button">Register</button>
+          <button className="bg-blue-600 w-full hover:bg-blue-800 transition delay-50 ease-in-out" type="button">Register</button>
         </Linker>
       </div>
       <div className="edubahamas__navbar-menu">

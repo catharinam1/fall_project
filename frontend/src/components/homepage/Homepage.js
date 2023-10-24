@@ -21,7 +21,7 @@ const Homepage = () => {
             />
         </div>
         {/* <button className="bg-blue-600 w-[200px] rounded-md font-medium my-6 mx-auto my-20">Start Learning</button> */}
-        <button className="mt-[60px] bg-blue-600 mx-auto py-2 flex justify-center items-center w-[200px]">Start Learning</button>
+        <button id="button-custom" className="mt-[30px] rounded-md bg-blue-600 mx-auto flex justify-center items-center w-[30%]">Start Learning</button>
       </div>
     </div>
   )
