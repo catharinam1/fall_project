@@ -40,4 +40,9 @@ public class studentService {
             throw new IllegalStateException("Student with ID " + studentId + " does not exist");
         }
     }
+
+    public Boolean studentExists(String email){
+        Optional<student> student = studentRepository.findStudentByEmail(email);
+        return student.isPresent();
+    }
 }

@@ -28,26 +28,26 @@ public class student{
 
     private String password;
     private String email;
-    private LocalDate dob;
+    private String school;
 
     public student(){
     }
 
-    public student(Long id, String firstName, String lastName, String password, String email, LocalDate dob){
+    public student(Long id, String firstName, String lastName, String password, String email, String school){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
         this.email = email;
-        this.dob = dob;
+        this.school = school;
     }
 
-    public student(String firstName, String lastName, String password, String email, LocalDate dob){
+    public student(String firstName, String lastName, String password, String email, String school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
         this.email = email;
-        this.dob = dob;
+        this.school = school;
     }
 
     public Long getId(){
@@ -79,11 +79,8 @@ public class student{
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    public LocalDate getDob(){
-        return dob;
-    }
-    public void setDob(LocalDate dob){
-        this.dob = dob;
+    public String getSchool(){
+        return school;
     }
 
     public String toString(){
@@ -93,7 +90,7 @@ public class student{
                 ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 // ", password='" + password + '\'' +
-                ", dob=" + dob +
+                ", school=" + school +
                 '}';
     }
 

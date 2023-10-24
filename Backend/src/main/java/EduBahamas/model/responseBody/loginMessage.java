@@ -7,6 +7,17 @@ public class loginMessage {
     private boolean success;
     private String message;
     private Optional<student> student;
+    private student s;
+
+    public loginMessage(boolean success){
+        this.success = success;
+    }
+    public loginMessage(boolean success, String message, student student){
+        this.success = success;
+        this.message = message;
+        this.s = student;
+    }
+
 
     public loginMessage(boolean success, String message, Optional<student> student){
         this.success = success;
