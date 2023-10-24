@@ -14,7 +14,7 @@ const Menu = () => (
 
   <p><Link to="home_subj" smooth={true} duration={500}>Subjects</Link></p>
 
-  <p><Link to="resources" smooth={true} duration={500}>Resources</Link></p>
+  <p><Link to="resources" smooth={true} duration={500}>Categories</Link></p>
 
   {/* <Linker className=" hover:before:w-0 hover:cursor-pointer" to="/subjects">
     <p><a href="">Subjects</a></p>
