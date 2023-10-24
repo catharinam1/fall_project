@@ -1,11 +1,8 @@
 package EduBahamas.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import EduBahamas.repository.studentRepository;
 import EduBahamas.model.requestBody.registerRequest;
 import EduBahamas.model.responseBody.loginMessage;
 import EduBahamas.model.student;
@@ -27,8 +24,7 @@ public class registrationService {
             return registerStudent(registerRequest);
         }
         else{
-            System.out.println("we do have this functionality yet");
-            return false;
+            return new loginMessage(false, "we do not have this functionality yet");
         }
     }
 
@@ -43,8 +39,7 @@ public class registrationService {
             studentService.addNewStudent(student);
             return new loginMessage(true, "", student);
         }
-        System.out.println("email already exists");
-        return false;
+        return new loginMessage(false, "This email is already taken");
     }
 
     public void registerTeacher(registerRequest registerRequest){

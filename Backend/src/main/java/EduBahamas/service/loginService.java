@@ -30,8 +30,8 @@ public class loginService {
             loginMessage message = new loginMessage(true, null, student);
             return message;
         } else{
-            System.out.println("we do have this functionality");
-            return false;
+            loginMessage message = new loginMessage(true, "incorrect email or password");
+            return message;
         }
     }
 

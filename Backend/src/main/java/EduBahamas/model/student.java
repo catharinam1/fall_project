@@ -1,7 +1,5 @@
 package EduBahamas.model;
 
-import java.time.LocalDate;
-
 import org.mindrot.jbcrypt.BCrypt;
 
 import jakarta.persistence.Column;

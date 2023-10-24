@@ -22,7 +22,9 @@ const Register = () => {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
+        password: "",
+        school: "",
+        role: ""
     })
     const handleInputChange = (e) => {
         const { name, value } = e.target;

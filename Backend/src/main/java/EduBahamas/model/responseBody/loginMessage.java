@@ -1,7 +1,9 @@
 package EduBahamas.model.responseBody;
 
 import java.util.Optional;
-import EduBahamas.model.student;;
+import EduBahamas.model.student;
+
+//TODO find a way to decouple the way messsages are outputted should they be different classes or not because this code is starting to have code smells
 
 public class loginMessage {
     private boolean success;
@@ -9,8 +11,9 @@ public class loginMessage {
     private Optional<student> student;
     private student s;
 
-    public loginMessage(boolean success){
+    public loginMessage(boolean success, String message){
         this.success = success;
+        this.message = message;
     }
     public loginMessage(boolean success, String message, student student){
         this.success = success;
