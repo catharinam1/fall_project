@@ -53,7 +53,7 @@ public class registrationService {
                             registerRequest.getLastName(),
                             registerRequest.getPassword(),
                             registerRequest.getEmail(),
-                            registerRequest.getScchool());
+                            registerRequest.getSchool());
 
             teacherService.addNewTeacher(teacher);
             return new userResponse(true, "", teacher);
