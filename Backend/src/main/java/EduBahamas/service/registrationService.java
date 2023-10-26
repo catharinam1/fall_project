@@ -37,12 +37,14 @@ public class registrationService {
                             registerRequest.getLastName(),
                             registerRequest.getPassword(),
                             registerRequest.getEmail(),
-                            registerRequest.getScchool());
+                            registerRequest.getSchool());
 
             studentService.addNewStudent(student);
             return new userResponse(true, "", student);
         }
-        return new userResponse(false, "This email is already taken", null);
+        System.out.println("email already exists");
+        return "Email already exists";
+        // return false;
     }
 
     public Object registerTeacher(registerRequest registerRequest){

@@ -1,6 +1,5 @@
 import React from "react";
 import './register/register.css';
-
 import { Link as Linker } from 'react-router-dom';
 
 const signIn = () => {
@@ -12,11 +11,10 @@ const signIn = () => {
                 <h2 className="absolute top-4 left-7 font-bold text-[white] text-[25px]">EduBahamas</h2>
             </a>
         <div className="w-full h-full grid lg:grid-cols-2 md:grid-cols-1 bg-gray-100 flex justify-center items-center">
-            
+
             <div className=" flex flex-col justify-center items-center text-center w-[100%] h-[100%] bg-[#1896b9]">
                 <p className="hidden sm:block text-gray-100 font-poppins">Nice To See You Again</p>
                 <h1 className="hidden sm:block md:w-[500px] 2xl:w-[700px] text-gray-100 md:text-6xl 2xl:text-8xl font-poppins">Welcome Back</h1>
-                {/* <img src={login} className="hidden sm:block mt-[50px] md:w-[400px] 2xl:w-[500px]" /> */}
             </div>
 
             <div className="flex flex-col items-center justify-center text-center w-[100%]">
@@ -27,13 +25,11 @@ const signIn = () => {
                     </h2>
 
                     <div className="my-5">
-                        {/* <label className="text-gray-600 w-[20%] py-0 my-0 text-[16px]">Email</label> */}
-                        <input className="border border-gray-200 shadow-md border-t-0 border-l-0 border-r-0 outline-none focus:shadow-[gray] py-5 px-3 my-0 rounded-md w-[90%]" type="text" placeholder="Email address" />
+                        <input className="focus:ring-transparent border border-gray-200 shadow-md border-t-0 border-l-0 border-r-0 outline-none focus:shadow-[gray] py-5 px-3 my-0 rounded-md w-[90%]" type="text" placeholder="Email address" />
                     </div>
 
                     <div className="my-5">
-                        {/* <label className="text-gray-600 py-0 my-0 w-[25%] text-[16px] ">Password</label> */}
-                        <input className="border border-gray-200 border-t-0 border-l-0 border-r-0 outline-none focus:shadow-[gray] shadow-md  py-5 px-3 my-0 rounded-md w-[90%]" type="password" placeholder="Password" />
+                        <input className="focus:ring-transparent border border-gray-200 border-t-0 border-l-0 border-r-0 outline-none focus:shadow-[gray] shadow-md  py-5 px-3 my-0 rounded-md w-[90%]" type="password" placeholder="Password" />
                     </div>
                     <div className="flex flex-col justify-center items-center w-[100%]">
 
@@ -43,14 +39,6 @@ const signIn = () => {
                         <h1 className=" display-inline text-[12px] text-gray-500 hover:underline">Forgot Password?</h1>
                      </Linker>
                     </div>
-
-
-                    {/* <Linker className="hover:bg-transparent hover:before:w-0" to="/#">
-                    <div className="mt-[-20px] flex items-center ml-[20px] mb-[20px] hover:underline">
-                        <img src={back_arrow} className=" w-6 "/>
-                        <h1 className="text-xs text-gray-600">Return Home</h1> 
-                    </div>
-                    </Linker> */}
 
                     <Linker className="hover:bg-transparent hover:before:w-0" to="/register">
                         <p className="text-gray-600 mt-[10px] flex justify-center items-center text-[14px] hover:underline">Don't have an account? &nbsp; <b>Register Now</b></p>

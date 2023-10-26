@@ -21,7 +21,7 @@ public class registerRequest {
     public String getLastName(){return lastName;}
     public String getEmail(){return email;}
     public String getPassword(){return password;}
-    public String getScchool(){return school;}
+    public String getSchool(){return school;}
     public String getRole(){return role;}
 
 
