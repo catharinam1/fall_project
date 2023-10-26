@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import EduBahamas.model.student;
-import EduBahamas.model.requestBody.studentLogin;
+import EduBahamas.model.requestBody.userLogin;
 import EduBahamas.service.loginService;
 
 @RestController
@@ -22,8 +22,8 @@ public class loginController {
     }
 
     @PostMapping
-    public Object loginUser(@RequestBody studentLogin studentLogin){
-        return loginService.validateUser(studentLogin);
+    public Object loginUser(@RequestBody userLogin userLogin){
+        return loginService.validateUser(userLogin);
     }
 
     @GetMapping

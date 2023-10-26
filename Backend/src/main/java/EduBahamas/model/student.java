@@ -31,7 +31,7 @@ public class student{
     public student(){
     }
 
-    public student(Long id, String firstName, String lastName, String password, String email, String school){
+    public student(Long id, String firstName, String lastName, String password, String email, String school, String role){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
