@@ -24,8 +24,8 @@ public class loginController {
     }
 
     @PostMapping
-    public Object loginUser(@RequestBody userLogin studentLogin){
-        return loginService.validateUser(studentLogin);
+    public Object loginUser(@RequestBody userLogin userLogin){
+        return loginService.validateUser(userLogin);
     }
 
     @GetMapping
