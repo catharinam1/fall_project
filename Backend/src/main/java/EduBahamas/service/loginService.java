@@ -7,35 +7,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import EduBahamas.model.student;
-import EduBahamas.model.requestBody.studentLogin;
-import EduBahamas.model.responseBody.userResponse;
+import EduBahamas.model.teacher;
+import EduBahamas.model.requestBody.userLogin;
+import EduBahamas.model.responseBody.loginResponse;
 import EduBahamas.repository.studentRepository;
+import EduBahamas.repository.teacherRepository;
 
 @Service
 public class loginService {
     private final studentRepository studentRepository;
+    private final teacherRepository teacherRepository;
 
     @Autowired
-    public loginService(studentRepository studentRepository){
+    public loginService(studentRepository studentRepository, teacherRepository teacherRepository){
         this.studentRepository = studentRepository;
+        this.teacherRepository = teacherRepository;
     }
 
-    public Object validateUser(studentLogin studentLogin){
-        Optional<student> student = studentRepository.findStudentByEmail(studentLogin.getEmail());
+    public Boolean validatePassword(String attemptedPassword, String password){
+        return BCrypt.checkpw(password, attemptedPassword);
+    }
 
-        if(student.isPresent() == true){
-            String password = student.get().getPassword();
-            String attemptedPassword = studentLogin.getPassword();
-            Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
-
-            if (passwordsMatch == true){
-                userResponse message = new userResponse(true, null, student);
-                return message;
-            }
+    public Object validateUser(userLogin userLogin){        
+        Optional<student> student = studentRepository.findStudentByEmail(userLogin.getEmail());
+        if(student.isPresent() == true && validatePassword(student.get().getPassword(), userLogin.getPassword()) == true){
+            return new loginResponse(student.get().getId(), "Student");
         }
 
-        userResponse message = new userResponse(false, "incorrect email or password", null);
-        return message;
+        Optional<teacher> teacher = teacherRepository.findTeacherByEmail(userLogin.getEmail());     
+        if(teacher.isPresent() == true && validatePassword(teacher.get().getPassword(), userLogin.getPassword()) == true){
+            return new loginResponse(teacher.get().getId(), "Teacher");
+        }
+
+        return new loginResponse(null, null);
     }
 
     public java.util.List<student> testLogin(){

@@ -6,10 +6,11 @@ import EduBahamas.model.student;
  * POJO to represent the body of a student login request
 */
 
-public class studentLogin extends student{
+public class userLogin extends student{
     String email;
     String password;
-    public studentLogin(String email, String password){
+    
+    public userLogin(String email, String password){
         this.email = email;
         this.password = password;
     }
