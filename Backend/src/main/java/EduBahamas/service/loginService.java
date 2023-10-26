@@ -22,17 +22,20 @@ public class loginService {
 
     public Object validateUser(studentLogin studentLogin){
         Optional<student> student = studentRepository.findStudentByEmail(studentLogin.getEmail());
-        String attemptedPassword = studentLogin.getPassword();
-        String password = student.get().getPassword();
-        Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
-        
-        if(student.isPresent() && (passwordsMatch == true)){
-            userResponse message = new userResponse(true, null, student);
-            return message;
-        } else{
-            userResponse message = new userResponse(true, "incorrect email or password");
-            return message;
+
+        if(student.isPresent() == true){
+            String password = student.get().getPassword();
+            String attemptedPassword = studentLogin.getPassword();
+            Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
+
+            if (passwordsMatch == true){
+                userResponse message = new userResponse(true, null, student);
+                return message;
+            }
         }
+
+        userResponse message = new userResponse(false, "incorrect email or password", null);
+        return message;
     }
 
     public java.util.List<student> testLogin(){
