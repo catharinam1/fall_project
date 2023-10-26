@@ -6,14 +6,17 @@ import org.springframework.stereotype.Service;
 import EduBahamas.model.requestBody.registerRequest;
 import EduBahamas.model.responseBody.userResponse;
 import EduBahamas.model.student;
+import EduBahamas.model.teacher;
 
 @Service
 public class registrationService {
     private final studentService studentService;
+    private final teacherService teacherService;
 
     @Autowired
-    public registrationService(studentService studentService){
+    public registrationService(studentService studentService, teacherService teacherService){
         this.studentService = studentService;
+        this.teacherService = teacherService;
     }
 
     public Object registerUser(registerRequest registerRequest){
@@ -24,7 +27,7 @@ public class registrationService {
             return registerStudent(registerRequest);
         }
         else{
-            return new userResponse(false, "we do not have this functionality yet", null);
+            return registerTeacher(registerRequest);
         }
     }
 
@@ -42,7 +45,17 @@ public class registrationService {
         return new userResponse(false, "This email is already taken", null);
     }
 
-    public void registerTeacher(registerRequest registerRequest){
-        System.out.println("we do not have that functionality");
+    public Object registerTeacher(registerRequest registerRequest){
+        if (teacherService.teacherExists(registerRequest.getEmail()) == false){
+            teacher teacher = new teacher(registerRequest.getFirstName(),
+                            registerRequest.getLastName(),
+                            registerRequest.getPassword(),
+                            registerRequest.getEmail(),
+                            registerRequest.getScchool());
+
+            teacherService.addNewTeacher(teacher);
+            return new userResponse(true, "", teacher);
+        }
+        return new userResponse(false, "This email is already taken", null);
     }
 }
