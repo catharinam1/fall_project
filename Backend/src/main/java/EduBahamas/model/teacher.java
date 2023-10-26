@@ -2,7 +2,6 @@ package EduBahamas.model;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,26 +11,22 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class student{
+public class teacher {
     @Id
     @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
-    private Long id;
+    Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    String firstName;
+    String lastName;
+    String password;
+    String email;
+    String school;
 
-    @Column(name = "last_name")
-    private String lastName;
-
-    private String password;
-    private String email;
-    private String school;
-
-    public student(){
+    public teacher(){
     }
 
-    public student(Long id, String firstName, String lastName, String password, String email, String school){
+    public teacher(Long id, String firstName, String lastName, String password, String email, String school){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -40,7 +35,7 @@ public class student{
         this.school = school;
     }
 
-    public student(String firstName, String lastName, String password, String email, String school){
+    public teacher(String firstName, String lastName, String password, String email, String school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
@@ -82,7 +77,7 @@ public class student{
     }
 
     public String toString(){
-        return "Student{" +
+        return "teacher{" +
                 "id=" + id +
                 ", firstname='" + firstName + '\'' +
                 ", lastname='" + lastName + '\'' +
