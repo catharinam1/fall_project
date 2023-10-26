@@ -12,8 +12,15 @@ public class loginResponse {
     public void setId(Long id){
         this.id = id;
     }
+    public Long getId(){
+        return this.id;
+    }
+
     public void setRole(String role){
         this.role = role;
+    }
+    public String getRole(){
+        return this.role;
     }
 
     public String toString(){
