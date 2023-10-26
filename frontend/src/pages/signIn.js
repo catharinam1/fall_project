@@ -38,6 +38,8 @@ const SignIn = () => {
             console.log(response);
             if ( response.data.success === false) {
                 setShowLoginError(true);
+                inputData.email = "";
+                inputData.password = "";
             } else {
                 setShowSuccessAlert(true);
                 setTimeout(() => {
