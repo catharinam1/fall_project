@@ -12,7 +12,7 @@ import Subjects from './pages/subjects'
 import Quizzes from './pages/quizzes'
 import PastPapers from './pages/pastpapers'
 import Biology from './pages/modules/biology'
-import Hoping from './pages/Hoping'
+import UserDashboard from './pages/userDashboard'
 
 const router = createBrowserRouter([
     {
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
         element: <Biology />,
     }, 
     {
-        path: "/hoping",
-        element: <Hoping />,
+        path: "/user-dashboard",
+        element: <UserDashboard />,
     }, 
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

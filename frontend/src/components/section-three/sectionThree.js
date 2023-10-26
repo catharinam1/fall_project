@@ -11,10 +11,10 @@ const SectionThree = () => {
          
     <div id="resources" className="w-full h-screen bg-white flex flex-col items-center justify-center">
         <h1 className="flex flex-col font-thin text-6xl 2xl:text-8xl mb-[10%]">Learn and Teach with EduBahamas</h1>
-        <div className="mx-auto grid md:grid-cols-3 px-20">
+        <div className="grid md:grid-cols-2">
 
-        <Card horizontal imgSrc={teacher} className="mr-5 hover:cursor-pointer shadow-lg transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105">
-            <h5 className="text-sm 2xl:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <Card horizontal imgSrc={teacher} className="mr-[10%] hover:cursor-pointer shadow-lg transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105">
+            <h5 className="text-md 2xl:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                 <p>
                     Register as a Teacher
                 </p>
@@ -25,8 +25,8 @@ const SectionThree = () => {
                 </p>
             </p>
         </Card>
-        <Card horizontal imgSrc={student} className="mr-5 hover:cursor-pointer shadow-lg transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105" >
-            <h5 className="text-sm 2xl:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <Card horizontal imgSrc={student} className="ml-[10%] hover:cursor-pointer shadow-lg transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105" >
+            <h5 className="text-md 2xl:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                 <p>
                     Register as a Student
                 </p>
@@ -37,18 +37,7 @@ const SectionThree = () => {
                 </p>
             </p>
         </Card>
-        <Card horizontal imgSrc={individual} className="hover:cursor-pointer shadow-lg transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105">
-            <h5 className="text-sm 2xl:text-xl font-bold tracking-tight text-gray-900 dark:text-white ">
-                <p className="">
-                    Register as an Individual
-                </p>
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-                <p className="text-sm">
-                    Learn at your own pace, with individualized progress tracking!
-                </p>
-            </p>
-        </Card>
+
            
         </div>
     </div>
