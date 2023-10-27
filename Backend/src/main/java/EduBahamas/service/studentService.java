@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import EduBahamas.model.student;
+import EduBahamas.model.entity.student;
 import EduBahamas.repository.studentRepository;
 
 @Service

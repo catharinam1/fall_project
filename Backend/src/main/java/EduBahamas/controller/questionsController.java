@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import EduBahamas.model.questions;
+import EduBahamas.model.responseBody.questionResponse;
 import EduBahamas.service.questionsService;
 
 @RestController
@@ -21,7 +21,7 @@ public class questionsController {
     }
 
     @GetMapping
-    public List<questions> getQuestions(){
+    public List<questionResponse> getQuestions(){
         return questionsService.getQuestions();
     }
 }

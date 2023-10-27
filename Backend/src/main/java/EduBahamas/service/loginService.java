@@ -6,8 +6,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import EduBahamas.model.student;
-import EduBahamas.model.teacher;
+import EduBahamas.model.entity.student;
+import EduBahamas.model.entity.teacher;
 import EduBahamas.model.requestBody.userLogin;
 import EduBahamas.model.responseBody.loginResponse;
 import EduBahamas.repository.studentRepository;
@@ -28,29 +28,16 @@ public class loginService {
         return BCrypt.checkpw(password, attemptedPassword);
     }
 
-    public Object validateUser(userLogin userLogin){ 
-
+    public Object validateUser(userLogin userLogin){        
         Optional<student> student = studentRepository.findStudentByEmail(userLogin.getEmail());
-        Optional<teacher> teacher = teacherRepository.findTeacherByEmail(userLogin.getEmail()); 
+        if(student.isPresent() == true && validatePassword(student.get().getPassword(), userLogin.getPassword()) == true){
+            return new loginResponse(true, student.get().getId(), "Student");
+        }
 
-        if(student.isPresent() == true){
-            String password = student.get().getPassword();
-            String attemptedPassword = userLogin.getPassword();
-            Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
-
-            if (passwordsMatch == true){
-                return new loginResponse(true, student.get().getId(), "Student");
-            }
-        } else if(teacher.isPresent() == true) {
-            String password = teacher.get().getPassword();
-            String attemptedPassword = userLogin.getPassword();
-            Boolean passwordsMatch = BCrypt.checkpw(attemptedPassword, password);
-
-            if (passwordsMatch == true){
-                return new loginResponse(true, teacher.get().getId(), "Teacher");
-            }
-        } 
-        
+        Optional<teacher> teacher = teacherRepository.findTeacherByEmail(userLogin.getEmail());     
+        if(teacher.isPresent() == true && validatePassword(teacher.get().getPassword(), userLogin.getPassword()) == true){
+            return new loginResponse(true, teacher.get().getId(), "Teacher");
+        }
         return new loginResponse(false, null, null);
     }
 
