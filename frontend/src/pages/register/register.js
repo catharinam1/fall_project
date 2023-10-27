@@ -212,12 +212,12 @@ const Register = () => {
                 </form>
             </div>
             <div className="flex justify-center items-center text-center w-[100%] h-[100%] bg-[#1896b9]">     
-            <blockquote class="text-4xl italic font-semibold text-gray-900 text-white px-20 text-right">
-              <svg class="animate-pulse w-30 h-30 text-white ml-[80%] mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+            <blockquote class="text-4xl 2xl:text-5xl italic font-semibold text-gray-900 text-white px-20">
+              {/* <svg class="mt-[-5%] w-20 h-20 text-white mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
                   <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-              </svg>
-              <p className="">"Education is not preparation for life, education is life itself."<br></br> — John Dewey</p>
-            </blockquote>     
+              </svg> */}
+              <p className="text-left">"Education is not preparation for life, education is life itself."<br></br></p><p className="text-right"> — John Dewey</p>
+            </blockquote>       
                 {/* <img src={register} className="hidden sm:block md:w-[550px] 2xl:w-[700px]" /> */}
             </div>
         </div>
