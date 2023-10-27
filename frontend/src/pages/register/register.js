@@ -6,11 +6,27 @@ import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
 import { Alert } from 'flowbite-react';
 import { HiInformationCircle } from 'react-icons/hi';
+import { Blockquote, SeeSourceCodeForSVG } from 'flowbite-react';
 import axios from "axios";
 
 const Register = () => {
 
+  const selectStyle = {
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      borderColor: state.isFocused ? 'none' : 'none', // Transparent black
+      boxShadow: state.isFocused ? 'none' : 'none', // Transparent black box shadow
+      outline: state.isFocused ? 'none)' : 'none', // Transparent black outline
+      '&:hover': {
+        borderColor: 'none', // Transparent on hover
+        boxShadow: 'none', // Transparent on hover
+        outline: 'none', // Transparent on hover
+      },
+    }),
+  };
+
     const [showPasswordError, setShowPasswordError] = useState(false);
+    const [showPasswordLengthError, setShowPasswordLengthError] = useState(false);
     const [showEmailError, setShowEmailError] = useState(false);
     const [showBlankError, setShowBlankError] = useState(false);
 
@@ -67,8 +83,9 @@ const Register = () => {
           setShowPasswordError(true);
         } else if (formData.firstName === "" || formData.lastName === "" || formData.email === "" || formData.password === "" || formData.school === "" || formData.alert === "") {
           setShowBlankError(true);
+        } else if (formData.password.length < 8) {
+          setShowPasswordLengthError(true);
         } else {
-          setShowPasswordError(false);
           const dataToSend = {
               firstName: formData.firstName,
               lastName: formData.lastName,
@@ -108,9 +125,15 @@ const Register = () => {
 
             <div className="flex flex-col items-center justify-center text-center w-[100%]">
                 <form  className="2xl:py-5 md:py-5 w-full">
-                  {showPasswordError && (
+                    {showPasswordError && (
                       <Alert className="w-[80%] ml-[10%] mt-[5%]" color="failure" icon={HiInformationCircle} onDismiss={() => setShowPasswordError(false)}>
                         Passwords do not match
+                      </Alert>
+                    )}
+
+                    {showPasswordLengthError && (
+                      <Alert className="w-[80%] ml-[10%] mt-[5%]" color="failure" icon={HiInformationCircle} onDismiss={() => setShowPasswordLengthError(false)}>
+                        Password is too short. Password should be atleast 8 characters.
                       </Alert>
                     )}
 
@@ -163,14 +186,17 @@ const Register = () => {
                     <div className="flex justify-center items-center grid grid-cols-2 mt-[-15px] w-full">
                         <div className="ml-[40%] my-5 w-[55%] text-left">
                             <label className=" text-gray-500 ">Select a School:</label>
-                            <Select options={schools} isSearchable isClearable
-                              value={formData.school} onChange={handleSchoolSelect} />
+                            <Select className="shadow-md" options={schools} isSearchable isClearable
+                              value={formData.school} onChange={handleSchoolSelect} 
+                              classNamePrefix="react-select"__control
+                              styles={selectStyle}/>
                         </div>
 
                         <div className="ml-[5%] my-5 w-[55%] text-left">
                             <label className="text-gray-500">Select a Role:</label>
-                            <Select className="outline-none border-none" options={roles} isSearchable isClearable
-                            value={formData.role} onChange={handleRoleSelect} />
+                            <Select className="shadow-md" options={roles} isSearchable isClearable
+                            value={formData.role} onChange={handleRoleSelect} 
+                            styles={selectStyle}/>
                         </div>
                     </div>
 
@@ -185,8 +211,14 @@ const Register = () => {
                   </Linker>
                 </form>
             </div>
-            <div className="flex justify-center items-center text-center w-[100%] h-[100%] bg-[#1896b9]">            
-                <img src={register} className="hidden sm:block md:w-[550px] 2xl:w-[700px]" />
+            <div className="flex justify-center items-center text-center w-[100%] h-[100%] bg-[#1896b9]">     
+            <blockquote class="text-4xl italic font-semibold text-gray-900 text-white px-20 text-right">
+              <svg class="animate-pulse w-30 h-30 text-white ml-[80%] mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+                  <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+              </svg>
+              <p className="">"Education is not preparation for life, education is life itself."<br></br> — John Dewey</p>
+            </blockquote>     
+                {/* <img src={register} className="hidden sm:block md:w-[550px] 2xl:w-[700px]" /> */}
             </div>
         </div>
         </div>

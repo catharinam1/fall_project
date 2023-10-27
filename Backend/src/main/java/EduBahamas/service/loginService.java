@@ -38,7 +38,6 @@ public class loginService {
         if(teacher.isPresent() == true && validatePassword(teacher.get().getPassword(), userLogin.getPassword()) == true){
             return new loginResponse(true, teacher.get().getId(), "Teacher");
         }
-
         return new loginResponse(false, null, null);
     }
 
