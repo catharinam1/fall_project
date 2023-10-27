@@ -21,15 +21,18 @@ public class student{
     private Long id;
 
     @Column(name = "first_name")
+    @JsonIgnore
     private String firstName;
 
     @Column(name = "last_name")
+    @JsonIgnore
     private String lastName;
 
     @JsonIgnore
     private String password;
-    
+
     private String email;
+
     private String school;
 
     public student(){

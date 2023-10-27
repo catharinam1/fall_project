@@ -31,15 +31,15 @@ public class loginService {
     public Object validateUser(userLogin userLogin){        
         Optional<student> student = studentRepository.findStudentByEmail(userLogin.getEmail());
         if(student.isPresent() == true && validatePassword(student.get().getPassword(), userLogin.getPassword()) == true){
-            return new loginResponse(student.get().getId(), "Student");
+            return new loginResponse(true, student.get().getId(), "Student");
         }
 
         Optional<teacher> teacher = teacherRepository.findTeacherByEmail(userLogin.getEmail());     
         if(teacher.isPresent() == true && validatePassword(teacher.get().getPassword(), userLogin.getPassword()) == true){
-            return new loginResponse(teacher.get().getId(), "Teacher");
+            return new loginResponse(true, teacher.get().getId(), "Teacher");
         }
 
-        return new loginResponse(null, null);
+        return new loginResponse(false, null, null);
     }
 
     public java.util.List<student> testLogin(){
