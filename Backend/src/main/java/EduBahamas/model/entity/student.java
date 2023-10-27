@@ -1,9 +1,10 @@
-package EduBahamas.model;
+package EduBahamas.model.entity;
 
 import org.mindrot.jbcrypt.BCrypt;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,25 +14,31 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class teacher {
+public class student{
     @Id
     @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
-    Long id;
+    private Long id;
 
-    String firstName;
-    String lastName;
+    @Column(name = "first_name")
+    @JsonIgnore
+    private String firstName;
+
+    @Column(name = "last_name")
+    @JsonIgnore
+    private String lastName;
 
     @JsonIgnore
-    String password;
-    
-    String email;
-    String school;
+    private String password;
 
-    public teacher(){
+    private String email;
+
+    private String school;
+
+    public student(){
     }
 
-    public teacher(Long id, String firstName, String lastName, String password, String email, String school){
+    public student(Long id, String firstName, String lastName, String password, String email, String school, String role){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -40,7 +47,7 @@ public class teacher {
         this.school = school;
     }
 
-    public teacher(String firstName, String lastName, String password, String email, String school){
+    public student(String firstName, String lastName, String password, String email, String school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
@@ -82,12 +89,11 @@ public class teacher {
     }
 
     public String toString(){
-        return "teacher{" +
+        return "Student{" +
                 "id=" + id +
                 ", firstname='" + firstName + '\'' +
                 ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                // ", password='" + password + '\'' +
                 ", school=" + school +
                 '}';
     }

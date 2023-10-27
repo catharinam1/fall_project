@@ -6,8 +6,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import EduBahamas.model.student;
-import EduBahamas.model.teacher;
+import EduBahamas.model.entity.student;
+import EduBahamas.model.entity.teacher;
 import EduBahamas.model.requestBody.userLogin;
 import EduBahamas.model.responseBody.loginResponse;
 import EduBahamas.repository.studentRepository;

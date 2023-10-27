@@ -1,6 +1,6 @@
 package EduBahamas.model.requestBody;
 
-import EduBahamas.model.student;
+import EduBahamas.model.entity.student;
 
 /*
  * POJO to represent the body of a student login request
