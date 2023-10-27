@@ -2,11 +2,20 @@ package EduBahamas.model.responseBody;
 
 public class loginResponse {
     private Long id;
+    private Boolean success;
     private String role;
 
-    public loginResponse(Long id, String role){
+    public loginResponse(Boolean success, Long id, String role){
+        this.success = success;
         this.id = id;
         this.role = role;
+    }
+
+    public void setSuccess(Boolean success){
+        this.success = success;
+    }
+    public Boolean getSuccess(){
+        return this.success;
     }
 
     public void setId(Long id){
@@ -25,7 +34,8 @@ public class loginResponse {
 
     public String toString(){
         return "{" +
-                "role=" + role +
+                "success=" + success +
+                ", role=" + role +
                 ", id='" + id +
                 '}';
     }

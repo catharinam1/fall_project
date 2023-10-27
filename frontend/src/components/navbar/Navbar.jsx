@@ -45,10 +45,10 @@ const Navbar = () => {
       </div>
       <div className="edubahamas__navbar-sign">
         <Linker to="/signIn">
-          <button type="button" className="bg-transparent hover:cursor-pointer hover:text-[#5F9EA0] hover:bg-transparent w-full w-full">Sign In</button>
+          <button type="button" className="bg-transparent hover:cursor-pointer hover:text-[#1896b9] hover:bg-transparent w-full w-full transition duration-200 ease-in">Sign In</button>
         </Linker>
         <Linker to="/register">
-          <button className="bg-blue-600 w-full hover:bg-blue-800 transition delay-50 ease-in-out" type="button">Register</button>
+          <button className="bg-[#1896b9] w-full hover:bg-[#064759] transition duration-200 ease-in" type="button">Register</button>
         </Linker>
       </div>
       <div className="edubahamas__navbar-menu">
