@@ -2,6 +2,8 @@ package EduBahamas.model;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +21,10 @@ public class teacher {
 
     String firstName;
     String lastName;
+
+    @JsonIgnore
     String password;
+    
     String email;
     String school;
 
