@@ -1,6 +1,7 @@
 package EduBahamas.model.responseBody;
 
 public class loginResponse {
+    private Boolean success;
     private Long id;
     private Boolean success;
     private String role;
@@ -9,6 +10,9 @@ public class loginResponse {
         this.success = success;
         this.id = id;
         this.role = role;
+    }
+    public Boolean getSuccess(){
+        return this.success;
     }
 
     public void setSuccess(Boolean success){

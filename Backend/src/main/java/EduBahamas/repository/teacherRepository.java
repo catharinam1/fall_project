@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import EduBahamas.model.teacher;
+import EduBahamas.model.entity.teacher;
 
 @Repository
 public interface teacherRepository extends JpaRepository<teacher, Long>{

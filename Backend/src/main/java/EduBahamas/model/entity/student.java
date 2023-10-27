@@ -1,6 +1,8 @@
-package EduBahamas.model;
+package EduBahamas.model.entity;
 
 import org.mindrot.jbcrypt.BCrypt;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,13 +21,18 @@ public class student{
     private Long id;
 
     @Column(name = "first_name")
+    @JsonIgnore
     private String firstName;
 
     @Column(name = "last_name")
+    @JsonIgnore
     private String lastName;
 
+    @JsonIgnore
     private String password;
+
     private String email;
+
     private String school;
 
     public student(){
@@ -87,7 +94,6 @@ public class student{
                 ", firstname='" + firstName + '\'' +
                 ", lastname='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                // ", password='" + password + '\'' +
                 ", school=" + school +
                 '}';
     }

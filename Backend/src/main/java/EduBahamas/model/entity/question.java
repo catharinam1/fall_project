@@ -1,47 +1,39 @@
-package EduBahamas.model;
+package EduBahamas.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 @Entity
-public class questions {
+public class question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @SequenceGenerator(name = "question_sequence", sequenceName = "question_sequence", allocationSize = 1)
     @Column(name = "questionid")
     private Long questionid;
 
     @Column(name = "questiontext")
     private String questiontext;
 
-    // @Column(name = "examid")
-    // private Long examid;
+    @Column(name = "examid")
+    private Long examid;
 
     @Column(name = "questiontype")
     private String questiontype;
 
-    @Column(name = "correctanswer")
-    private String correctanswer;
+    public question(){}
 
-    public questions(){}
-
-    public questions(String questiontext, Long examid, String correctanswer, Long questionId, String questiontype){
+    public question(String questiontext, Long examid, String questiontype){
         this.questiontext = questiontext;
-        //this.examid = examid;
-        this.correctanswer = correctanswer;
-        this.questionid = questionId;
+        this.examid = examid;
         this.questiontype = questiontype;
     }
 
     public String getQuestionText(){
         return questiontext;
-    }
-
-    public String getCorrectAnswer(){
-        return correctanswer;
     }
 
     public Long getQuestionId(){
@@ -52,10 +44,12 @@ public class questions {
         return questiontype;
     }
 
+    public Long getExamId(){
+        return examid;
+    }
     public String toString(){
         return "Question{" +
                 "text=" + getQuestionText() +
-                ", answer='" + getCorrectAnswer() + '\'' +
                 ", type='" + getQuestionType() + '\'' +
                 ", id='" + getQuestionId() +
                 '}';

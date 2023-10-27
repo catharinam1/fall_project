@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import EduBahamas.model.student;
+import EduBahamas.model.entity.student;
 import EduBahamas.service.studentService;
 
 @RestController

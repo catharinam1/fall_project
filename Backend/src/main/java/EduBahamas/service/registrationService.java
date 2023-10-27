@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import EduBahamas.model.requestBody.registerRequest;
 import EduBahamas.model.responseBody.userResponse;
-import EduBahamas.model.student;
-import EduBahamas.model.teacher;
+import EduBahamas.model.entity.student;
+import EduBahamas.model.entity.teacher;
 
 @Service
 public class registrationService {
