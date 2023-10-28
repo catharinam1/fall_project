@@ -4,12 +4,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import eduBahamas.Models.RequestBody.registrationRequest;
 import eduBahamas.Service.registrationService;
 
 @RestController
 @RequestMapping(path = "api/v1/registration")
+@CrossOrigin
 public class registrationController {
     private final registrationService registrationService;
 

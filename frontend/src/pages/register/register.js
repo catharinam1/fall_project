@@ -99,7 +99,7 @@ const Register = () => {
 
           setShowBlankError(false);
 
-          axios.post("http://localhost:8080/api/v1/register", dataToSend, {
+          axios.post("http://localhost:8080/api/v1/registration", dataToSend, {
               headers: {
                   'Content-Type': 'application/json'
               }
